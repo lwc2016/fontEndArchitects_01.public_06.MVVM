@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-group{
+            padding: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <h4>请输入您的信息：</h4>
+        <form action="">
+            <div class="form-group">
+                <label for="">姓名：</label>
+                <input v-model="user.name" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="">年龄：</label>
+                <input v-model="user.age" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="">手机号：</label>
+                <input v-model="user.phone" />
+            </div>
+            <div class="form-group">
+                <label for="">邮箱：</label>
+                <input v-model="user.email" />
+            </div>
+        </form>
+        <h4>您输入的信息如下：</h4>
+        <div>
+            <div class="form-group">
+                <label for="">姓名：</label>
+                <span>{{user.name}}</span>
+            </div>
+            <div class="form-group">
+                <label for="">年龄：</label>
+                <span>{{user.age}}</span>
+            </div>
+            <div class="form-group">
+                <label for="">联系方式：</label>
+                <span>{{user.phone}}  {{user.email}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="./mvvm/dest/index.js"></script>
+    <script>
+        /*
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                message: "hello world",
+                user: {
+                    name: "",
+                    age: "",
+                    phone: "",
+                    email: ""
+                }
+            }
+        })
+        */
+        const vm = new MVVM({
+            el: "#app",
+            data: {
+                message: "hello world",
+                user: {
+                    name: "Jack",
+                    age: "26",
+                    phone: "18058742793",
+                    email: "liuwenchao1990@163.com"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
